@@ -1,8 +1,6 @@
-
-
 ## -------------------------------makeCacheMatrix------------------------##
 ## makeCacheMatrix function to cache inverse of a square matrix 
-##supplied as an argument by calling cacheSolve function
+##supplied as an argument to cacheSolve function
 
 makeCacheMatrix <- function(x = matrix()) {
   
@@ -21,8 +19,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 ##----------------------------cachSolve----------------------------------------##
-## cacheSolve function to check whether matrix is inversible & 
-## then calculateinverse of the matrix 
+## cacheSolve function to check whether matrix inverse exists in cache else
+## calculate inverse of the matrix 
 
 cacheSolve <- function(x, ...) {
   
@@ -39,7 +37,7 @@ cacheSolve <- function(x, ...) {
   else
   {
     ## if cacheVariable exists, check if the original values are maintained
-    ## return the cacheVariable if the condition is satisfied
+    ## else recompute inverse of matrix
     if(!identical(invMatrix,staticInvMatrix)) 
     {
       ##solving the matrix again as the values are changed
